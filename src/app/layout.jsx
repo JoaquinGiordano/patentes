@@ -1,3 +1,4 @@
+import { GlobalContextProvider } from '../context/Global.context';
 import './globals.css';
 
 export const metadata = {
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body className={`bg-gradient-radial from-blue-600 to-blue-900`}>
-        {children}
+        <GlobalContextProvider>{children}</GlobalContextProvider>
       </body>
     </html>
   );

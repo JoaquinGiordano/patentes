@@ -6,6 +6,10 @@
   font-family: VinegarStroke;
   src: url('/Vinegar Stroke.ttf');
 }
+@font-face {
+  font-family: LicensePlate;
+  src: url('/License Plate.ttf');
+}
 
 input {
   outline: none;

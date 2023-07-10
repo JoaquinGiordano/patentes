@@ -1,38 +1,43 @@
 import MenuButton from '../components/MenuButton';
 import Input from '../components/Input';
 
-import { BsPersonFill, BsInfoLg } from 'react-icons/bs';
+import { BsPersonFill } from 'react-icons/bs';
 import { BiWorld } from 'react-icons/bi';
 import { IoMdSettings } from 'react-icons/io';
+import { ImInfo } from 'react-icons/im';
 
 const menuButtons = [
   {
     text: 'Local',
     route: '/local',
     icon: <BsPersonFill />,
+    disabled: false,
   },
   {
     text: 'En Linea',
     route: '/online',
     icon: <BiWorld />,
+    disabled: true,
   },
   {
     text: 'Instrucciones',
     route: '/instructions',
-    icon: <BsInfoLg />,
+    icon: <ImInfo />,
+    disabled: true,
   },
   {
     text: 'Configuraciones',
     route: '/settings',
     icon: <IoMdSettings />,
+    disabled: true,
   },
 ];
 
 export default function Home() {
   return (
     <main className="h-screen w-screen flex justify-center p-2 items-center">
-      <section className="flex flex-col gap-5 bg-blue-900 p-4 py-5 rounded-xl w-full">
-        <h1 className="font-[VinegarStroke] text-center text-4xl overflow-hidden [letter-spacing:0.16rem] text-white">
+      <section className="flex flex-col gap-3 bg-slate-800 border-solid border-y-8 border-white p-4 py-5 rounded w-full">
+        <h1 className="font-[VinegarStroke] pt-1 text-center text-4xl overflow-hidden [letter-spacing:0.16rem] text-white">
           PATENTES!
         </h1>
         <Input maxlenght={20} placeholder="Nombre de Usuario" />
@@ -40,8 +45,10 @@ export default function Home() {
           {menuButtons.map(description => (
             <MenuButton
               href={description.route}
+              as={description.route}
               text={description.text}
               icon={description.icon}
+              disabled={description.disabled}
               key={description.route}
             />
           ))}

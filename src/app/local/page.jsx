@@ -1,7 +1,21 @@
+'use client';
+
+import { useEffect } from 'react';
+import PlateContainer from '../../components/PlateContainer';
+
+import { useGlobalContext } from '../../context/Global.context';
+import PointsContainer from '../../components/PointsContainer';
+
 export default function Local() {
+  const { plate, generatePlate } = useGlobalContext();
+
+  useEffect(() => {
+    generatePlate();
+  }, []);
   return (
-    <main className="h-screen w-screen flex justify-center p-5 items-center">
-      <h1>TEST</h1>
+    <main className="flex flex-col justify-center gap-2 h-screen w-screen border-3 p-5 items-center">
+      <PlateContainer text={plate?.text} />
+      <PointsContainer points={plate?.points} />
     </main>
   );
 }
