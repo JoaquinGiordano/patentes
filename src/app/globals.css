@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Chewy;
-  src: url('/Chewy.ttf');
+  font-family: VinegarStroke;
+  src: url('/Vinegar Stroke.ttf');
 }
 
 input {
