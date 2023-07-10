@@ -1,5 +1,5 @@
-import MenuButton from '@/components/MenuButton';
-import Input from '@/components/Input';
+import MenuButton from '../components/MenuButton';
+import Input from '../components/Input';
 
 import { BsPersonFill, BsInfoLg } from 'react-icons/bs';
 import { BiWorld } from 'react-icons/bi';

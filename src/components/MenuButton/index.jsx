@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-//@ts-ignore
 export default function MenuButton(props, children) {
   return (
     <Link
