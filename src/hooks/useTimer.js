@@ -12,6 +12,7 @@ export default function useTimer() {
   useEffect(() => {
     if (time <= 0) {
       clearInterval(timerInterval);
+      setIsTimerRunning(false);
       setTimeout(() => {
         reset();
       }, 1000);
@@ -19,6 +20,7 @@ export default function useTimer() {
   }, [time]);
 
   const start = () => {
+    if (isTimerRunning) return;
     setIsTimerRunning(true);
     setTimerInterval(
       setInterval(() => {
