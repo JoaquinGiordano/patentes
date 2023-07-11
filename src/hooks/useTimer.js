@@ -1,18 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function useTimer() {
   const DEFAULT_TIME = 30;
 
-  const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [timerInterval, setTimerInterval] = useState(null);
+  const timer = useRef(null);
   const [time, setTime] = useState(DEFAULT_TIME);
 
   useEffect(() => {
-    if (time <= 0) {
-      clearInterval(timerInterval);
-      setIsTimerRunning(false);
+    if (time <= 0 && timer.current) {
       setTimeout(() => {
         reset();
       }, 1000);
@@ -20,19 +17,17 @@ export default function useTimer() {
   }, [time]);
 
   const start = () => {
-    if (isTimerRunning) return;
-    setIsTimerRunning(true);
-    setTimerInterval(
-      setInterval(() => {
-        setTime(actualTime => actualTime - 1);
-      }, 1000)
-    );
+    if (timer.current) return;
+    timer.current = setInterval(() => {
+      setTime(actualTime => actualTime - 1);
+    }, 1000);
+    setTime(DEFAULT_TIME - 1);
   };
 
   const reset = () => {
-    setIsTimerRunning(false);
     setTime(DEFAULT_TIME);
-    clearInterval(timerInterval);
+    clearInterval(timer.current);
+    timer.current = null;
   };
 
   const toggle = () => {
@@ -43,5 +38,5 @@ export default function useTimer() {
     }
   };
 
-  return { time, start, reset, toggle, isTimerRunning };
+  return { time, start, reset, toggle, timer };
 }

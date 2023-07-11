@@ -5,10 +5,10 @@ import { BiTimer } from 'react-icons/bi';
 import useTimer from '../../hooks/useTimer';
 
 export default function Timer() {
-  const timer = useTimer();
+  const { timer, toggle, time } = useTimer();
 
   const handlePlayResetButton = () => {
-    timer.toggle();
+    toggle();
   };
 
   return (
@@ -18,16 +18,16 @@ export default function Timer() {
           <BiTimer className="text-4xl h-full" />
         </div>
         <h1 className="  pt-1 w-full flex items-center gap-2 justify-center">
-          {timer.time} segundos
+          {time} segundos
         </h1>
       </div>
 
       <button
         className={`${
-          timer.isTimerRunning ? 'bg-red-700' : 'bg-green-700'
+          timer.current ? 'bg-red-700' : 'bg-green-700'
         } flex justify-center items-center h-full px-2`}
         onClick={handlePlayResetButton}>
-        {timer.isTimerRunning ? <BsStopFill /> : <BsFillPlayFill />}
+        {timer.current ? <BsStopFill /> : <BsFillPlayFill />}
       </button>
     </section>
   );

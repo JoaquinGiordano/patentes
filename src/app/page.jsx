@@ -35,7 +35,7 @@ const menuButtons = [
 
 export default function Home() {
   return (
-    <main className="h-screen w-screen flex justify-center p-2 items-center">
+    <main className=" w-screen h-full flex justify-center p-2 items-center">
       <section className="flex flex-col gap-3 bg-slate-800 border-solid border-y-8 border-white p-4 py-5 rounded w-full">
         <h1 className="font-[VinegarStroke] pt-1 text-center text-4xl overflow-hidden [letter-spacing:0.16rem] text-white">
           PATENTES!
