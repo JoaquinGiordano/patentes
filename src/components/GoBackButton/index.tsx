@@ -14,7 +14,7 @@ export default function GoBackButton({ onBack }) {
   return (
     <>
       <button
-        className="fixed top-2 left-2 text-xl  text-white  bg-slate-800  border-dashed border-slate-600 border-2 px-2 py-2 rounded"
+        className="fixed top-2 left-2 text-xl sm:text-3xl  text-white  bg-slate-800 hover:scale-110 transition-transform hover:bg-slate-900 border-dashed border-slate-600 border-2 px-2 py-2 rounded"
         onClick={handleBack}>
         <IoIosArrowBack />
       </button>
