@@ -1,6 +1,7 @@
 'use client';
 
 import { GlobalContextProvider } from '../context/Global.context';
+
 import './globals.css';
 
 export const metadata = {

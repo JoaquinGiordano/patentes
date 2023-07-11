@@ -45,7 +45,6 @@ export default function Home() {
           {menuButtons.map(description => (
             <MenuButton
               href={description.route}
-              as={description.route}
               text={description.text}
               icon={description.icon}
               disabled={description.disabled}

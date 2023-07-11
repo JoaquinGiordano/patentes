@@ -4,11 +4,16 @@ import { BsFillPlayFill, BsStopFill } from 'react-icons/bs';
 import { BiTimer } from 'react-icons/bi';
 import useTimer from '../../hooks/useTimer';
 
-export default function Timer() {
-  const { timer, toggle, time } = useTimer();
+export default function Timer({ onStart }) {
+  const { timer, start, reset, time } = useTimer();
 
   const handlePlayResetButton = () => {
-    toggle();
+    if (timer.current) {
+      reset();
+      return;
+    }
+    start();
+    if (onStart) onStart();
   };
 
   return (

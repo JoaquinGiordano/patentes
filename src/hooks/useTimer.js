@@ -30,13 +30,5 @@ export default function useTimer() {
     timer.current = null;
   };
 
-  const toggle = () => {
-    if (time == DEFAULT_TIME) {
-      start();
-    } else {
-      reset();
-    }
-  };
-
-  return { time, start, reset, toggle, timer };
+  return { time, start, reset, timer };
 }
