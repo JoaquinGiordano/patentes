@@ -1,5 +1,6 @@
-import MenuButton from '../components/MenuButton';
+import FloatingContainer from '../components/FloatingContainer';
 import Input from '../components/Input';
+import MenuButton from '../components/MenuButton';
 
 import { BsPersonFill } from 'react-icons/bs';
 import { BiWorld } from 'react-icons/bi';
@@ -36,10 +37,7 @@ const menuButtons = [
 export default function Home() {
   return (
     <main className="w-full  h-full flex justify-center p-2  items-center">
-      <section className="w-full sm:w-96 flex flex-col  gap-3  bg-slate-800 border-solid border-y-8 border-white p-4 sm:p-6 py-5 rounded ">
-        <h1 className="font-[VinegarStroke] pt-1 text-center text-4xl  sm:text-6xl overflow-hidden [letter-spacing:0.16rem] text-white ">
-          PATENTES!
-        </h1>
+      <FloatingContainer title="PATENTES!" bigtitle={true}>
         <Input maxlenght={20} placeholder="Nombre de Usuario" />
         <div className="flex flex-col gap-2">
           {menuButtons.map(description => (
@@ -52,7 +50,7 @@ export default function Home() {
             />
           ))}
         </div>
-      </section>
+      </FloatingContainer>
     </main>
   );
 }

@@ -1,11 +1,35 @@
+import FloatingContainer from '../../components/FloatingContainer';
+import MenuButton from '../../components/MenuButton';
 
-import GoBackButton from '../../components/GoBackButton';
+import { BsPersonFill } from 'react-icons/bs';
+import { BiWorld } from 'react-icons/bi';
+
+const menuButtons = [
+  {
+    text: 'Local',
+    route: '/instructions/local',
+    icon: <BsPersonFill />,
+  },
+
+  {
+    text: 'En Linea',
+    route: '/instructions/online',
+    icon: <BiWorld />,
+  },
+];
+
 export default function Instructions() {
-  
   return (
-    <main className="flex flex-col justify-center gap-2 h-full w-screen border-3 p-5 items-center">
-      <GoBackButton />
-     <h1 className="text-3xl text-white font-[VinegarStroke]">Instrucciones</h1>
-    </main>
+    <FloatingContainer title="Instrucciones">
+      {menuButtons.map(description => (
+        <MenuButton
+          href={description.route}
+          text={description.text}
+          icon={description.icon}
+          disabled={description.disabled}
+          key={description.route}
+        />
+      ))}
+    </FloatingContainer>
   );
 }
