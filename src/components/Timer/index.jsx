@@ -19,8 +19,8 @@ export default function Timer({ onStart }) {
   return (
     <section className="flex w-full sm:w-[32rem] bg-slate-800 text-center select-none  rounded border-solid border-white border-y-4 sm:border-y-8 text-white font-[VinegarStroke] ">
       <div className="flex w-full">
-        <div className="p-1">
-          <BiTimer className="text-4xl h-full" />
+        <div className="px-1 sm:px-4 sm:py-1">
+          <BiTimer className="text-4xl sm:text-5xl h-full" />
         </div>
         <h1 className="  text-2xl sm:text-4xl pt-2 w-full flex items-center gap-2 justify-center">
           {time} segundos
