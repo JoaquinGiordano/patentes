@@ -14,15 +14,15 @@ const menuButtons = [
     disabled: false,
   },
   {
-    text: 'En Linea',
-    route: '/online',
-    icon: <BiWorld />,
-    disabled: true,
-  },
-  {
     text: 'Instrucciones',
     route: '/instructions',
     icon: <ImInfo />,
+    disabled: false,
+  },
+  {
+    text: 'En Linea',
+    route: '/online',
+    icon: <BiWorld />,
     disabled: true,
   },
   {
