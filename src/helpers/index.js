@@ -17,7 +17,8 @@ function generateRandomPlate() {
   let plate = { text: '', letters: [], numbers: 294, points: 0 };
 
   for (let i = 0; i < LETTERS_QUANTITY; i++) {
-    plate.letters[i] = AVAILABLE_LETTERS[Math.floor(Math.random() * 26)];
+    plate.letters[i] =
+      AVAILABLE_LETTERS[Math.floor(Math.random() * AVAILABLE_LETTERS.length)];
   }
   plate.numbers = Math.floor(Math.random() * 1000);
   plate.text = `${plate.letters.join('')} ${plate.numbers < 10 ? '0' : ''}${
