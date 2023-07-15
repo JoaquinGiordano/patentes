@@ -15,6 +15,7 @@ const menuButtons = [
     text: 'En Linea',
     route: '/instructions/online',
     icon: <BiWorld />,
+    disabled: true,
   },
 ];
 

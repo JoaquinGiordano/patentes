@@ -37,7 +37,7 @@ const menuButtons = [
 export default function Home() {
   return (
     <main className="w-full  h-full flex justify-center p-2  items-center">
-      <FloatingContainer title="PATENTES!" bigtitle={true}>
+      <FloatingContainer title="PATENTES!" bigtitle={+true}>
         <Input maxlenght={20} placeholder="Nombre de Usuario" />
         <div className="flex flex-col gap-2">
           {menuButtons.map(description => (

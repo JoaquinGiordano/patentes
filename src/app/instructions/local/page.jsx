@@ -16,7 +16,8 @@ export default function LocalInstruccions() {
         <li>
           <span>
             Tendrás 30 segundos para pensar una plabra con las 3 letras
-            generadas en la patente (puedes agregar o quitar letras entre medio)
+            generadas en la patente (puedes agregar o quitar letras entre medio,
+            adelante y al final)
           </span>
         </li>
         <li>
