@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export default function useTimer() {
-  const DEFAULT_TIME = 30;
+  const DEFAULT_TIME = 60;
 
   const timer = useRef(null);
   const [time, setTime] = useState(DEFAULT_TIME);
